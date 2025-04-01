@@ -1,6 +1,6 @@
 # Fast Device Detector
 
-A fast device detection library written in Rust with Python bindings.
+Python bindings for the [rust_device_detector](https://github.com/simplecastapps/rust-device-detector.git), major thanks goes to the rust version maintainers and developers first and foremost.
 
 ## Installation
 
