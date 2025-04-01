@@ -3,7 +3,7 @@
 Simple example demonstrating the use of device_detector.
 """
 
-from device_detector import DeviceDetector
+from fast_device_detector import DeviceDetector
 
 # Example user agent strings
 user_agents = [

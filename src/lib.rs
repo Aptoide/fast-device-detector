@@ -1,11 +1,11 @@
 use pyo3::exceptions::PyRuntimeError;
 use pyo3::prelude::*;
 use pyo3::types::{PyDict, PyType};
-use rust_device_detector::device_detector::DeviceDetector;
+use rust_device_detector::device_detector::DeviceDetector as RustDeviceDetector;
 
-#[pyclass]
+#[pyclass(name = "DeviceDetector")]
 struct DeviceDetectorWrapper {
-    detector: DeviceDetector,
+    detector: RustDeviceDetector,
 }
 
 #[pymethods]
@@ -15,7 +15,7 @@ impl DeviceDetectorWrapper {
     #[pyo3(text_signature = "()")]
     fn new() -> Self {
         Self {
-            detector: DeviceDetector::new(),
+            detector: RustDeviceDetector::new(),
         }
     }
 
@@ -24,7 +24,7 @@ impl DeviceDetectorWrapper {
     #[pyo3(text_signature = "(cls, cache_size)")]
     fn with_cache(_cls: &Bound<'_, PyType>, cache_size: u64) -> Self {
         Self {
-            detector: DeviceDetector::new_with_cache(cache_size),
+            detector: RustDeviceDetector::new_with_cache(cache_size),
         }
     }
 
@@ -98,7 +98,8 @@ impl DeviceDetectorWrapper {
 
 /// A Python module implemented in Rust.
 #[pymodule]
-fn device_detector(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn fast_device_detector(_py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<DeviceDetectorWrapper>()?;
+    m.add("__all__", vec!["DeviceDetector"])?;
     Ok(())
 }

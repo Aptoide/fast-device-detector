@@ -1,13 +1,13 @@
-# Device Detector
+# Fast Device Detector
 
-Python bindings for the [rust_device_detector](https://github.com/simplecastapps/rust-device-detector.git), major thanks goes to the rust version maintainers and developers first and foremost.
+A fast device detection library written in Rust with Python bindings.
 
 ## Installation
 
-The package is available on PyPI and can be installed using pip:
+The package is available as a private package on GitHub. To install it:
 
 ```bash
-pip install device-detector
+pip install --index-url https://github.com/simplecastapps/rust-device-detector.git fast-device-detector
 ```
 
 This will automatically download and install the appropriate wheel for your platform and Python version.
@@ -15,7 +15,7 @@ This will automatically download and install the appropriate wheel for your plat
 ## Usage
 
 ```python
-from device_detector import DeviceDetector
+from fast_device_detector import DeviceDetector
 
 # Create a detector with a cache size of 1000
 detector = DeviceDetector.with_cache(1000)

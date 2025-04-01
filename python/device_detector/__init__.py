@@ -4,7 +4,7 @@ A high-performance device detection library built on top of the
 rust-device-detector Rust crate.
 """
 
-from .device_detector import DeviceDetectorWrapper
+from .fast_device_detector import DeviceDetectorWrapper
 
 # Re-export the wrapper as DeviceDetector for a more Pythonic API
 DeviceDetector = DeviceDetectorWrapper

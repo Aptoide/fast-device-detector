@@ -1,4 +1,4 @@
-from typing import Dict, Optional, Any, ClassVar, Type
+from typing import Dict, Any, Type
 
 class DeviceDetectorWrapper:
     """Python wrapper for the Rust DeviceDetector."""

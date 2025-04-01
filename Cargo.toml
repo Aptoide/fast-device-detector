@@ -1,5 +1,5 @@
 [package]
-name = "device-detector"
+name = "fast_device_detector"
 version = "0.1.0"
 edition = "2021"
 authors = ["Aptoide <apptechnology.aptoide@gmail.com>", "Miguel Rebelo <miguel.python.dev@gmail.com>"]
@@ -9,7 +9,7 @@ readme = "README.md"
 repository = "https://github.com/simplecastapps/rust-device-detector"
 
 [lib]
-name = "device_detector"
+name = "fast_device_detector"
 crate-type = ["cdylib"]
 
 [dependencies]
